@@ -45,6 +45,11 @@ module.exports = {
         type: Sequelize.STRING(400),
         allowNull: false,
       },
+      score: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
       is_activated: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
