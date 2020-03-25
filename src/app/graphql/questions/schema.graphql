@@ -1,0 +1,17 @@
+type Question {
+  id: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  deletedAt: Date
+  theme: Theme!
+  level: Level!
+  text: String!
+  score: Int!
+  isActivated: Boolean!
+}
+
+type Query {
+  questions: [Question]
+  questionsByTheme(theme: ID!): [Question]
+  questionsByLevel(level: ID!): [Question]
+}

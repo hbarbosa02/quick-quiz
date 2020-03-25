@@ -1,0 +1,9 @@
+type Theme {
+  id: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  deletedAt: Date
+  name: String!
+  descriptions: String!
+  isActivated: Boolean!
+}
