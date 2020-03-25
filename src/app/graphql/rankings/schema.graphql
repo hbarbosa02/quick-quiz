@@ -1,0 +1,13 @@
+type Ranking {
+  id: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  deletedAt: Date
+  user: User!
+  mode: String!
+  score: Int!
+}
+
+type Mutation {
+  saveScore(score: Int!, mode: String!): Ranking!
+}
