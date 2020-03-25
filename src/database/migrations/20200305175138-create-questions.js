@@ -17,6 +17,10 @@ module.exports = {
         allowNull: false,
         defaultValue: new Date(),
       },
+      delete_at: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
       theme_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -37,19 +41,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      title: {
-        type: Sequelize.STRING(100),
-        allowNull: false,
-      },
-      enunciated: {
-        type: Sequelize.STRING(400),
-        allowNull: false,
-      },
-      answers: {
-        type: Sequelize.STRING(1000),
-        allowNull: false,
-      },
-      answer: {
+      text: {
         type: Sequelize.STRING(400),
         allowNull: false,
       },

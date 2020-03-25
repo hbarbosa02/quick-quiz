@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('levels', {
+    return queryInterface.createTable('answers', {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -21,23 +21,33 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: true,
       },
-      name: {
-        type: Sequelize.STRING(50),
+      question_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'questions',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      number: {
+        type: Sequelize.STRING(400),
         allowNull: false,
       },
-      descriptions: {
-        type: Sequelize.STRING(100),
+      text: {
+        type: Sequelize.STRING(1000),
         allowNull: false,
       },
-      is_activated: {
+      is_right: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
-        defaultValue: true,
+        defaultValue: false,
       },
     })
   },
 
   down: queryInterface => {
-    return queryInterface.dropTable('levels')
+    return queryInterface.dropTable('answers')
   },
 }

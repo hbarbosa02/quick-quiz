@@ -17,6 +17,10 @@ module.exports = {
         allowNull: false,
         defaultValue: new Date(),
       },
+      delete_at: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
       name: {
         allowNull: false,
         type: Sequelize.STRING(80),
