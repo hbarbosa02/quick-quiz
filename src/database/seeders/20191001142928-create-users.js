@@ -7,6 +7,7 @@ module.exports = {
         name: 'iroman',
         email: 'iroman@marvel.com',
         password_hash: hashSync('123456789', 8),
+        current_score: 0,
       },
     ])
   },
