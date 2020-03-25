@@ -6,9 +6,10 @@ import User from '../app/models/User'
 import Token from '../app/models/Token'
 import Theme from '../app/models/Theme'
 import Level from '../app/models/Level'
+import Ranking from '../app/models/Ranking'
 import Question from '../app/models/Question'
 
-const models = [User, Token, Theme, Level, Question]
+const models = [User, Token, Theme, Level, Question, Ranking]
 
 class Database {
   constructor() {
