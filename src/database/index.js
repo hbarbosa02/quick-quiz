@@ -4,8 +4,11 @@ import databaseConfig from '../config/database'
 
 import User from '../app/models/User'
 import Token from '../app/models/Token'
+import Theme from '../app/models/Theme'
+import Level from '../app/models/Level'
+import Question from '../app/models/Question'
 
-const models = [User, Token]
+const models = [User, Token, Theme, Level, Question]
 
 class Database {
   constructor() {
