@@ -8,6 +8,11 @@ type Ranking {
   score: Int!
 }
 
+type Query {
+  ranking: Ranking!
+  rankings(mode: String!): [Ranking]
+}
+
 type Mutation {
   saveScore(score: Int!, mode: String!): Ranking!
 }
