@@ -11,6 +11,11 @@ module.exports = {
         mode: 'Mode 2',
         score: 100,
       },
+      {
+        user_id: 1,
+        mode: 'Mode 2',
+        score: 99,
+      },
     ])
   },
 
