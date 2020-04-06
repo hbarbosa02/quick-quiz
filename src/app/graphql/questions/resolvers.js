@@ -15,9 +15,11 @@ export default {
     questions: authenticated(() =>
       Question.findAll({ where: { isActivated: true } })
     ),
+
     questionsByTheme: authenticated((_, args) =>
       Question.findAll({ where: { themeId: args.theme, isActivated: true } })
     ),
+
     questionsByLevel: authenticated((_, args) =>
       Question.findAll({ where: { levelId: args.level, isActivated: true } })
     ),

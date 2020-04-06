@@ -27,6 +27,8 @@ class User extends Model {
 
   static associate(models) {
     this.hasMany(models.Token, { as: 'tokens' })
+    this.hasMany(models.Ranking, { as: 'rankings' })
+    this.hasOne(models.Score, { as: 'score' })
   }
 
   checkPassword(password) {
