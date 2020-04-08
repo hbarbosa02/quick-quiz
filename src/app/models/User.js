@@ -22,13 +22,18 @@ class User extends Model {
       if (user.password) user.password_hash = hashSync(user.password, 8)
     })
 
+    this.addHook('afterCreate', async user => {
+      const { Score } = sequelize.models
+      await Score.create({ userId: user.id, score: 0 })
+    })
+
     return this
   }
 
   static associate(models) {
     this.hasMany(models.Token, { as: 'tokens' })
     this.hasMany(models.Ranking, { as: 'rankings' })
-    this.hasOne(models.Score, { as: 'score' })
+    this.hasOne(models.Score, { as: 'score', foreignKey: 'user_id' })
   }
 
   checkPassword(password) {

@@ -26,7 +26,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      score: {
+      value: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

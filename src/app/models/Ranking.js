@@ -13,6 +13,14 @@ class Ranking extends Model {
       }
     )
 
+    this.addHook('afterCreate', async data => {
+      if (data.mode === 'Mode 1') {
+        const { Score } = sequelize.models
+        const score = await Score.findByPk(data.userId)
+        await score.update({ value: score.value + data.score })
+      }
+    })
+
     return this
   }
 

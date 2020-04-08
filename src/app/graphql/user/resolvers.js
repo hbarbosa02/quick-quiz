@@ -1,8 +1,13 @@
 import User from '../../models/User'
+import Score from '../../models/Score'
 
 import { authenticated } from '../../../util/composables'
 
 export default {
+  User: {
+    score: parent => Score.findByPk(parent.id),
+  },
+
   Query: {
     me: authenticated((root, args, ctx) => User.findByPk(ctx.user.id)),
   },

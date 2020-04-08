@@ -8,7 +8,7 @@ class Score extends Model {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        score: Sequelize.INTEGER,
+        value: Sequelize.INTEGER,
       },
       {
         sequelize,

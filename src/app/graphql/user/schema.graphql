@@ -11,6 +11,7 @@ type User {
   deletedAt: Date
   name: String!
   email: String!
+  score: Score!
 }
 
 type Query {
