@@ -28,7 +28,7 @@ export default {
         },
       })
 
-      return shuffle(array)
+      return shuffle(array).slice(0, 9)
     }),
 
     questionsByTheme: authenticated((_, args) =>
