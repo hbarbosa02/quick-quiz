@@ -7,6 +7,7 @@ class Question extends Model {
         themeId: Sequelize.INTEGER,
         levelId: Sequelize.INTEGER,
         text: Sequelize.STRING,
+        score: Sequelize.INTEGER,
         isActivated: Sequelize.BOOLEAN,
       },
       {

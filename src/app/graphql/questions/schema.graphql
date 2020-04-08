@@ -11,7 +11,7 @@ type Question {
 }
 
 type Query {
-  questions: [Question]
+  questions(theme: ID, level: ID): [Question]
   questionsByTheme(theme: ID!): [Question]
   questionsByLevel(level: ID!): [Question]
 }

@@ -8,8 +8,9 @@ import Theme from '../app/models/Theme'
 import Level from '../app/models/Level'
 import Ranking from '../app/models/Ranking'
 import Question from '../app/models/Question'
+import Score from '../app/models/Score'
 
-const models = [User, Token, Theme, Level, Question, Ranking]
+const models = [User, Token, Theme, Level, Question, Ranking, Score]
 
 class Database {
   constructor() {

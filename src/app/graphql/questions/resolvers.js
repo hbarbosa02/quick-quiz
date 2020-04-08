@@ -2,6 +2,7 @@ import Theme from '../../models/Theme'
 import Level from '../../models/Level'
 import Question from '../../models/Question'
 
+import { shuffle } from '../../../util/shuffle'
 import { authenticated } from '../../../util/composables'
 
 export default {
@@ -12,9 +13,23 @@ export default {
   },
 
   Query: {
-    questions: authenticated(() =>
-      Question.findAll({ where: { isActivated: true } })
-    ),
+    questions: authenticated(async (_, args) => {
+      const obj = {
+        themeId: args.theme,
+        levelId: args.level,
+      }
+
+      Object.keys(obj).forEach(key => obj[key] === undefined && delete obj[key])
+
+      const array = await Question.findAll({
+        where: {
+          ...obj,
+          isActivated: true,
+        },
+      })
+
+      return shuffle(array)
+    }),
 
     questionsByTheme: authenticated((_, args) =>
       Question.findAll({ where: { themeId: args.theme, isActivated: true } })
