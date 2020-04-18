@@ -5,6 +5,7 @@ type Question {
   deletedAt: Date
   theme: Theme!
   level: Level!
+  answers: [Answer!]
   text: String!
   score: Int!
   isActivated: Boolean!

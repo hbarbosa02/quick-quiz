@@ -1,0 +1,11 @@
+type Answer {
+  id: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  deletedAt: Date
+  question: Question!
+  type: String!
+  text: String!
+  number: Int!
+  isRight: Boolean!
+}

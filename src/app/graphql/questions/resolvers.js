@@ -1,5 +1,6 @@
 import Theme from '../../models/Theme'
 import Level from '../../models/Level'
+import Answer from '../../models/Answer'
 import Question from '../../models/Question'
 
 import { shuffle } from '../../../util/shuffle'
@@ -10,6 +11,8 @@ export default {
     theme: parent => Theme.findByPk(parent.themeId),
 
     level: parent => Level.findByPk(parent.levelId),
+
+    answers: parent => Answer.findAll({ where: { questionId: parent.id } }),
   },
 
   Query: {
